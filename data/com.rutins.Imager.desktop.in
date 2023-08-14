@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=imager
+Exec=imager
+Icon=com.rutins.Imager
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

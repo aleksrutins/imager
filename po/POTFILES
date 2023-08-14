@@ -1,0 +1,6 @@
+data/com.rutins.Imager.desktop.in
+data/com.rutins.Imager.appdata.xml.in
+data/com.rutins.Imager.gschema.xml
+src/main.vala
+src/window.vala
+src/window.ui
