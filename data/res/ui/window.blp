@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template ImagerWindow : Adw.ApplicationWindow {
+template $ImagerWindow : Adw.ApplicationWindow {
   default-width: 600;
   default-height: 300;
 
@@ -9,6 +9,24 @@ template ImagerWindow : Adw.ApplicationWindow {
     orientation: vertical;
 
     HeaderBar header_bar {
+      [start]
+      Button {
+        label: "Back";
+        clicked => $go_prev();
+        sensitive: bind (template.router as <$ImagerUtilRouterRouter>).has-prev;
+      }
+
+      [title]
+      $ImagerUtilRouterRouterThumbnail router_thumb {
+
+      }
+
+      [end]
+      Button {
+        label: "Next";
+        clicked => $go_next();
+        sensitive: bind (template.router as <$ImagerUtilRouterRouter>).has-next;
+      }
       [end]
       MenuButton {
         icon-name: "open-menu-symbolic";
@@ -16,14 +34,7 @@ template ImagerWindow : Adw.ApplicationWindow {
       }
     }
 
-    Label label {
-      label: "Hello, World!";
-      vexpand: true;
-
-      styles [
-        "title-1",
-      ]
-    }
+    $ImagerUtilRouterRouterView router_view {}
   }
 }
 

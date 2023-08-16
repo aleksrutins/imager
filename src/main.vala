@@ -24,6 +24,9 @@
  */
 
 int main (string[] args) {
+    // Initialize types in templates
+    typeof(Imager.Util.Router.Router);
+
     var app = new Imager.Application ();
     return app.run (args);
 }

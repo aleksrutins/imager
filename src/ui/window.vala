@@ -22,15 +22,35 @@
  *
  * SPDX-License-Identifier: MIT
  */
+using Imager.Util.Router;
 
 namespace Imager {
     [GtkTemplate (ui = "/com/rutins/Imager/ui/window.ui")]
     public class Window : Adw.ApplicationWindow {
         [GtkChild]
-        private unowned Gtk.Label label;
+        private unowned RouterThumbnail router_thumb;
+
+        [GtkChild]
+        private unowned RouterView router_view;
+
+        private Router router;
 
         public Window (Gtk.Application app) {
             Object (application: app);
+
+            router = new Router({
+                () => new Gtk.Label("Hello, World!"),
+                () => new Gtk.Label("This is another page!")
+            });
+
+            router.connect_views (router_thumb, router_view);
+        }
+
+        public void go_prev() {
+            router.prev();
+        }
+        public void go_next() {
+            router.next();
         }
     }
 }

@@ -4,6 +4,8 @@ project('imager', ['c', 'vala'],
   default_options: [ 'warning_level=2', 'werror=false', ],
 )
 
+add_project_arguments(['--enable-experimental-non-null'], language: 'vala')
+
 i18n = import('i18n')
 gnome = import('gnome')
 

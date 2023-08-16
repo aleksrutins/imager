@@ -42,7 +42,7 @@ namespace Imager {
         public override void activate () {
             base.activate ();
             var win = this.active_window;
-            if (win == null) {
+            if ((Gtk.Window?)win == null) {
                 win = new Imager.Window (this);
             }
             win.present ();

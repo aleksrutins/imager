@@ -31,6 +31,18 @@
         "*.a"
     ],
     "modules" : [
+   	{
+	  "name": "blueprint-compiler",
+	  "buildsystem": "meson",
+	  "sources": [
+	    {
+	      "type": "git",
+	      "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
+	      "tag": "v0.10.0"
+	    }
+	  ]
+	},
+
         {
             "name" : "imager",
             "builddir" : true,
@@ -38,7 +50,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "file:///home/aleks/Projects"
+                    "url" : "."
                 }
             ]
         }
